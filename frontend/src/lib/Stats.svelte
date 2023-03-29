@@ -1,71 +1,23 @@
-<style>
-.stats {
-  background-color: #EAE7DC;
-  padding: 50px 0;
-}
-
-.container {
-  max-width: 1140px;
-  margin: 0 auto;
-}
-
-.row {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.col-md-6 {
-  flex-basis: 50%;
-  padding: 0 20px;
-  box-sizing: border-box;
-}
-
-.countries, .properties {
-  background-color: #FFFFFF;
-  border-radius: 10px;
-  padding: 30px;
-  margin-bottom: 30px;
-  text-align: center;
-}
-
-.countries h2, .properties h2 {
-  color: #0A192F;
-  font-size: 32px;
-  font-weight: 700;
-  margin-bottom: 20px;
-}
-
-.countries p, .properties p {
-  color: #707070;
-  font-size: 18px;
-  font-weight: 400;
-  margin-bottom: 0;
-}
-
-.number {
-  color: #C9A661;
-  font-size: 48px;
-  font-weight: 700;
-}
-</style>
-
-
-<section class="stats">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6">
-          <div class="countries">
-            <h2>Our Global Reach</h2>
-            <p>We currently operate in <span class="number">5</span> countries worldwide.</p>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="properties">
-            <h2>Our Properties</h2>
-            <p>We currently manage over <span class="number">100</span> properties worldwide.</p>
-          </div>
-        </div>
+<section class="bg-gray-100 py-16">
+  <div class="max-w-5xl mx-auto px-6">
+    <h2 class="text-4xl font-bold mb-12">Our Global Reach</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-12">
+      <div class="bg-white rounded-lg p-6">
+        <h3 class="text-xl font-bold mb-4">Countries</h3>
+        <p class="text-gray-600 text-3xl font-bold">20+</p>
+      </div>
+      <div class="bg-white rounded-lg p-6">
+        <h3 class="text-xl font-bold mb-4">Properties</h3>
+        <p class="text-gray-600 text-3xl font-bold">500+</p>
+      </div>
+      <div class="bg-white rounded-lg p-6">
+        <h3 class="text-xl font-bold mb-4">Satisfied Customers</h3>
+        <p class="text-gray-600 text-3xl font-bold">10K+</p>
+      </div>
+      <div class="bg-white rounded-lg p-6">
+        <h3 class="text-xl font-bold mb-4">Years of Experience</h3>
+        <p class="text-gray-600 text-3xl font-bold">30+</p>
       </div>
     </div>
-  </section>
-  
+  </div>
+</section>

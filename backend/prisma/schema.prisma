@@ -25,6 +25,7 @@ model Property{
   bathrooms Int
   sqft Int
   lotSize Int
+  featured Boolean @default(false)
   yearBuilt Int
   propertyType String
   propertyStatus String

@@ -4,6 +4,8 @@
     import Navbar from "$lib/Navbar.svelte"
     import Hero from "$lib/Hero.svelte"
     import Stats from "$lib/Stats.svelte";
+    import Trusted from "$lib/Trusted.svelte";
+    import Footer from "$lib/Footer.svelte";
 
     /** @type {import('./$types').PageData} */
 
@@ -17,99 +19,50 @@
         }[];
     };
 };
+
+const formatter = new Intl.NumberFormat('en-US', {
+                                style: 'currency',
+                                currency: 'USD',
+                                minimumFractionDigits: 0
+                            });
     export let data;
 </script>
 
 
 
 
-<style>
-
-.properties {
-    background-color: #FFFFFF;
-    border-radius: 10px;
-    padding: 30px;
-    margin-bottom: 30px;
-    text-align: center;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.row {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.col-md-6 {
-    flex-basis: 50%;
-    padding: 0 20px;
-    box-sizing: border-box;
-}
-
-.property {
-    margin-bottom: 30px;
-}
-
-.property-image {
-    width: 100%;
-    height: 300px;
-    overflow: hidden;
-    border-radius: 10px;
-}
-
-.property-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.property-content {
-    margin-top: 20px;
-}
-
-.btn-primary {
-    background-color: #C9A661;
-    color: #FFFFFF;
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-decoration: none;
-    display: inline-block;
-    margin-top: 20px;
-    transition: all 0.3s ease;
-}
-
-.btn-primary:hover {
-    transform: scale(1.05);
-    background-color: #B08F4F;
-}
-
-
-</style>
 <Navbar />
 <section>
     <Hero />
      <Stats />
-     <section class="properties">
-        <div class="container">
-            <div class="row">
+     <section class="bg-gray-100 py-10">
+        <div class="max-w-5xl mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-8">Top Properties</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                 {#each data.properties as property}
-                <div class="col-md-6">
-                    <div class="property">
-                        <div class="property-image">
-                            <img src={property.propertyImage} alt="">
-                        </div>
-                        <div class="property-content">
-                            <h2>{property.name}</h2>
-                            <p>{property.description}</p>
-                            <a href={`/properties/${property.id}`} class="btn-primary">View Property</a>
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src={property.propertyImage} alt="property image" class="h-56 w-full object-cover" />
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold mb-2">
+                            {property.name}
+                        </h3>
+                        <p class="text-gray-700 text-base">
+                            {property.description}
+                        </p>
+                        <div class="mt-4 flex justify-between items-center">
+                            <span class="font-bold text-teal-500">
+                                {formatter.format(property.price)}
+                            </span>
+                            <a href={`/properties/${property.id}`} class="bg-teal-500 hover:bg-teal-600 text-white py-2 px-4 rounded-md">
+                                View Property
+                            </a>
                         </div>
                     </div>
                 </div>
                 {/each}
-                </div>
             </div>
+        </div>
     </section>
 </section>
+<Trusted />
+<Footer />

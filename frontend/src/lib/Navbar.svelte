@@ -1,120 +1,21 @@
-<script lang="ts">
 
 
-
-
-
-</script>
-
-
-<style>
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem;
-  background-color: #EAE7DC;
-  color: #C9A661;
-}
-
-.navbar-logo img {
-  height: 40px;
-}
-
-.navbar-menu {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-.navbar-item {
-  margin: 0 1rem;
-}
-
-.navbar-link {
-  color: #C9A661;
-  text-decoration: none;
-  font-size: 1.2rem;
-  font-weight: bold;
-  text-transform: uppercase;
-}
-
-.navbar-link:hover {
-  color: #00d1b2;
-}
-
-.navbar-button {
-  margin-right: 1rem;
-}
-
-@media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-  }
-
-  .navbar-menu {
-    flex-direction: column;
-    margin-top: 1rem;
-  }
-
-  .navbar-item {
-    margin: 0.5rem 0;
-  }
-
-  .navbar-button {
-    margin: 0;
-  }
-  .btn {
-    background-color: #00d1b2;
-    background-image: linear-gradient(315deg, #00d1b2 0%, #ffdd00 74%);
-    color: #fff;
-    padding: 0.45rem 1rem;
-    border-radius: 0.25rem;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-weight: bold;
-    font-size: 1.2rem;
-    transition: all 0.3s ease;
-  }
-}
-
-.btn {
-    background-color: #00d1b2;
-    background-image: linear-gradient(315deg, #00d1b2 0%, #ffdd00 74%);
-    color: #fff;
-    padding: 0.75rem 1rem;
-    border-radius: 0.25rem;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-weight: bold;
-    font-size: 1.2rem;
-    transition: all 0.3s ease;
-}
-
-
-.btn:hover {
-    background-color: #fff;
-    background-image: linear-gradient(315deg, #fff 0%, #ffdd00 74%);
-    color: #00d1b2;
-}
-
-
-</style>
-
-<nav class="navbar">
-    <div class="navbar-logo">
-      <a href="#"><img src="logo.png" alt="Skyline Estates"></a>
+<nav class="bg-gray-900 shadow">
+  <div class="max-w-5xl mx-auto px-6 py-3">
+    <div class="flex justify-between items-center">
+      <div>
+        <a href="/" class="text-teal-400 font-bold text-lg">Skyline Estates</a>
+      </div>
+      <div class="flex items-center">
+        <div class="hidden md:block">
+          <a href="/properties" class="text-gray-300 hover:text-teal-400 ml-6">Properties</a>
+          <a href="/about" class="text-gray-300 hover:text-teal-400 ml-6">About Us</a>
+          <a href="/contact" class="text-gray-300 hover:text-teal-400 ml-6">Contact Us</a>
+        </div>
+        <div class="md:ml-4">
+          <a href="/signup" class="bg-teal-400 text-gray-900 rounded-md py-2 px-4 font-bold hover:bg-teal-500">Sign up</a>
+        </div>
+      </div>
     </div>
-    <ul class="navbar-menu">
-      <li class="navbar-item"><a href="#" class="navbar-link">Home</a></li>
-      <li class="navbar-item"><a href="#" class="navbar-link">Properties</a></li>
-      <li class="navbar-item"><a href="#" class="navbar-link">About Us</a></li>
-      <li class="navbar-item"><a href="#" class="navbar-link">Contact</a></li>
-    </ul>
-    <div class="navbar-button">
-      <a href="#" class="btn btn-primary">Schedule a Tour</a>
-    </div>
-  </nav>
+  </div>
+</nav>

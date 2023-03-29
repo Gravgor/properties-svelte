@@ -22,97 +22,33 @@
                             });
   </script>
 
-  <style>
    
-   .property {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-    background-color: #f5f5f5;
-    padding: 2rem;
-    margin: 160px auto;
-   }
-   .property_container {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: 2rem;
-   }
-    .property_info {
-     display: flex;
-     flex-direction: row;
-     width: auto;
-    }
+  
 
-    .property_info h1 {
-        font-size: 2rem;
-        font-weight: 700;
-        color: #333;
-    }
-
-    .property_info p {
-        width: 600px;
-        font-size: 1.2rem;
-        font-weight: 400;
-        color: #333;
-    }
-
-    .property_info a {
-        font-size: 1.2rem;
-        font-weight: 400;
-        color: #333;
-        text-decoration: none;
-        border: 1px solid #333;
-        padding: 0.5rem 1rem;
-        border-radius: 5px;
-        transition: all 0.3s ease-in-out;
-    }
-
-    .property_info a:hover {
-        background-color: #333;
-        color: #fff;
-        cursor: pointer;
-    }
-
-    .propety_img{
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        border-radius: 55px;
-        box-shadow: 0 0 10px rgba(0,0,0,0.5);
-    }
-
-    .property_left{
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: center;
-    }
-  </style>
-
-
-    <div class="property">
-        <div class="property_container">
-            <GoBack />
-            <img class="propety_img" src={properties[0].propertyImage} alt="property image" />
-            <div class="property_info">
-                <div class="property_left">
-                    <h1>{properties[0].name}</h1>
-                    <p>{properties[0].description}</p>
-                    <a href={properties[0].link}>Scheldude a showing</a>
-                </div>
-                <div class="property_right">
-                    <h1>
-                        {
-                            formatter.format(properties[0].price)
-                        }
-                    </h1>
-                    <p>{properties[0].address}, {properties[0].city}, {properties[0].state}</p>
-                    </div>
-            </div>
+<section class="bg-gray-100 py-10">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="flex justify-between items-center">
+        <h2 class="text-3xl font-bold mb-8">{properties[0].name}</h2>
+        <span class="font-bold text-teal-500">{formatter.format(properties[0].price)}</span>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div>
+          <img src={properties[0].propertyImage} alt="Property Image" class="w-full rounded-md shadow-md">
         </div>
+        <div>
+          <h3 class="text-xl font-bold mb-2">Property Details</h3>
+          <p class="text-gray-700 text-base mb-4">{properties[0].description}.</p>
+          <ul class="list-disc pl-6">
+            <li class="mb-2">Number of bedrooms: {properties[0].bedrooms}</li>
+            <li class="mb-2">Number of bathrooms: {properties[0].bathrooms}</li>
+            <li class="mb-2">Location: {properties[0].address}, {properties[0].state}</li>
+            <li class="mb-2">Amenities: Swimming pool, gym, parking</li>
+          </ul>
+          <div class="mt-8">
+            <button class="bg-teal-500 hover:bg-teal-600 text-white py-2 px-4 rounded-md">Scheldue a meeting</button>
+            <a href="/" class="text-teal-500 font-bold text-sm flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M11.707 4.293a1 1 0 0 0-1.414 0L5.586 9.586a1 1 0 0 0 0 1.414L10.293 15.7a1 1 0 1 0 1.414-1.414L8.414 11H16a1 1 0 1 0 0-2H8.414l3.293-3.293a1 1 0 0 0 0-1.414z"/></svg>Back to Main Page</a>
+          </div>
+        </div>
+      </div>
     </div>
+  </section>
