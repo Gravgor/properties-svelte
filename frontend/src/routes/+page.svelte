@@ -12,12 +12,11 @@
         properties: {
             title: string;
             description: string;
-            image: string;
+            propertyImage: string;
             link: string;
         }[];
     };
 };
-
     export let data;
 </script>
 
@@ -79,6 +78,12 @@
     text-decoration: none;
     display: inline-block;
     margin-top: 20px;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    transform: scale(1.05);
+    background-color: #B08F4F;
 }
 
 
@@ -94,7 +99,7 @@
                 <div class="col-md-6">
                     <div class="property">
                         <div class="property-image">
-                            <img src="https://s3images.zee5.com/wp-content/uploads/2021/08/individual-houses-villas.jpg" alt="">
+                            <img src={property.propertyImage} alt="">
                         </div>
                         <div class="property-content">
                             <h2>{property.name}</h2>

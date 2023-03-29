@@ -1,5 +1,16 @@
-<script>
+<script lang="ts">
     /** @type {import('./$types').PageData} */
+
+    type PageData = {
+    props: {
+        properties: {
+            title: string;
+            description: string;
+            propertyImage: string;
+            link: string;
+        }[];
+    };
+};
     export let data;
   </script>
 
@@ -11,20 +22,19 @@
     <div class="properties">
         <div class="container">
         <div class="row">
-            {#each data.props.properties as property}
+            <h1 class="col-md-12">Properties</h1>
+            {#each data.properties as property}
             <div class="col-md-6">
                 <div class="property">
-                <div class="property-image">
-                    <img src={property.image} alt={property.title} />
-                </div>
-                <div class="property-content">
-                    <h3>{property.title}</h3>
+                    <div class="property-image">
+                        <img src={property.propertyImage} alt={property.title} />
+                    </div>
+                    <h2>{property.title}</h2>
                     <p>{property.description}</p>
-                    <a href={property.link} class="btn-primary">View Property</a>
+                    <a href={property.link}>View Property</a>
                 </div>
                 </div>
-            </div>
-            {/each}
-        </div>
-        </div>
+        {/each}
+        </div>  
+        </div> 
     </div>

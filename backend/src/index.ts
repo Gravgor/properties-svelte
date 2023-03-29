@@ -20,8 +20,8 @@ app.get('/', (req: Request, res: Response) => {
     res.send('Hello World!');
 })
 
-app.get('/api/v1/properties',getProperties)
-app.get('/api/v1/properties/:id',getPropertiesById)
+app.get('/api/v1/properties/get',getProperties)
+app.get('/api/v1/property/:id',getPropertiesById)
 
 app.listen(port, () => {
     console.log(`Backend listening at http://localhost:${port}`)
