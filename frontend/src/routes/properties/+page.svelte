@@ -1,4 +1,5 @@
 <script lang="ts">
+    import Navbar from "$lib/Navbar.svelte"
      /** @type {import('./$types').PageData} */
 
      type PageData = {
@@ -20,7 +21,7 @@ const formatter = new Intl.NumberFormat('en-US', {
     export let data;
 </script>
 
-
+<Navbar />
 <section class="bg-gray-100 py-16">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 class="text-3xl font-bold text-gray-800 mb-4">

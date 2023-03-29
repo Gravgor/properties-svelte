@@ -26,6 +26,10 @@ const formatter = new Intl.NumberFormat('en-US', {
                                 minimumFractionDigits: 0
                             });
     export let data;
+    const properties = data.properties.length;
+    if (properties > 3) {
+        data.properties = data.properties.slice(0, 3);
+    }
 </script>
 
 
