@@ -10,7 +10,7 @@ interface PropertiesLoad {
 }
 
 async function getAllProperties() {
-    const res = await fetch(`https://api.example.com/properties`);
+    const res = await fetch(`http://localhost:5000/api/v1/properties`);
     if (res.ok) {
         const properties = await res.json();
         return properties;
@@ -22,10 +22,9 @@ async function getAllProperties() {
 }
 
 
-/*export async function load({params}: {params: PropertiesLoad}) {
+export async function load({params}: {params: PropertiesLoad}) {
     const properties = await getAllProperties();
     if (properties) {
         return { properties };
         };
     }
-}*/

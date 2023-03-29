@@ -13,8 +13,8 @@
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-  background-color: #0A192F;
-  color: #EAE7DC;
+  background-color: #EAE7DC;
+  color: #C9A661;
 }
 
 .navbar-logo img {
@@ -35,7 +35,7 @@
 }
 
 .navbar-link {
-  color: #EAE7DC;
+  color: #C9A661;
   text-decoration: none;
   font-size: 1.2rem;
   font-weight: bold;

@@ -4,8 +4,8 @@
 .hero {
   position: relative;
   height: 600px;
-  background-color: #0A192F;
-  color: #fff;
+  background-color: #EAE7DC;
+  color: #C9A661;
   overflow: hidden;
 }
 

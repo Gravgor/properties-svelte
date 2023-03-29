@@ -3,6 +3,10 @@
     export let data;
   </script>
 
+  <style>
+   
+  </style>
+
 
     <div class="properties">
         <div class="container">

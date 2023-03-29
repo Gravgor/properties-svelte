@@ -1,9 +1,27 @@
+
+
 <script lang="ts">
     import Navbar from "$lib/Navbar.svelte"
     import Hero from "$lib/Hero.svelte"
-    import Footer from "$lib/Footer.svelte";
     import Stats from "$lib/Stats.svelte";
+
+    /** @type {import('./$types').PageData} */
+
+    type PageData = {
+    props: {
+        properties: {
+            title: string;
+            description: string;
+            image: string;
+            link: string;
+        }[];
+    };
+};
+
+    export let data;
 </script>
+
+
 
 
 <style>
@@ -72,54 +90,20 @@
      <section class="properties">
         <div class="container">
             <div class="row">
+                {#each data.properties as property}
                 <div class="col-md-6">
                     <div class="property">
                         <div class="property-image">
                             <img src="https://s3images.zee5.com/wp-content/uploads/2021/08/individual-houses-villas.jpg" alt="">
                         </div>
                         <div class="property-content">
-                            <h2>Property 1</h2>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.</p>
-                            <a href="/properties/1" class="btn-primary">View Property</a>
+                            <h2>{property.name}</h2>
+                            <p>{property.description}</p>
+                            <a href={`/properties/${property.id}`} class="btn-primary">View Property</a>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <div class="property">
-                        <div class="property-image">
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRvcIGYneFcKORoKkeGUn0WEKFVV0XRKKUO7wfvnJNpD_F_kUbiJ5zYXd61IrZbLgNpJ4&usqp=CAU" alt="">
-                        </div>
-                        <div class="property-content">
-                            <h2>Property 2</h2>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.</p>
-                            <a href="/properties/2" class="btn-primary">View Property</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="property">
-                        <div class="property-image">
-                            <img src="https://thumbor.forbes.com/thumbor/fit-in/900x510/https://www.forbes.com/advisor/au/wp-content/uploads/2022/08/AustralianHousing-scaled.jpg" alt="">
-                        </div>
-                        <div class="property-content">
-                            <h2>Property 3</h2>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.</p>
-                            <a href="/properties/3" class="btn-primary">View Property</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="property">
-                        <div class="property-image">
-                            <img src="https://thumbor.forbes.com/thumbor/fit-in/900x510/https://www.forbes.com/advisor/au/wp-content/uploads/2022/08/AustralianHousing-scaled.jpg" alt="">
-                        </div>
-                        <div class="property-content">
-                            <h2>Property 4</h2>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.</p>
-                            <a href="/properties/4" class="btn-primary">View Property</a>
-                        </div>
-                    </div>
-                </div>
+                {/each}
                 </div>
             </div>
     </section>
