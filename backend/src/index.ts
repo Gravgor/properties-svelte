@@ -4,6 +4,7 @@ import morgan from 'morgan';
 import cors from 'cors';
 import { getProperties } from './handlers/getProperties';
 import {getPropertiesById} from './handlers/getPropertiesById';
+import { createProperty } from './handlers/createProperty';
 
 dotnev.config();
 
@@ -22,6 +23,7 @@ app.get('/', (req: Request, res: Response) => {
 
 app.get('/api/v1/properties/get',getProperties)
 app.get('/api/v1/property/:id',getPropertiesById)
+app.post('/api/v1/properties/create', createProperty)
 
 app.listen(port, () => {
     console.log(`Backend listening at http://localhost:${port}`)
