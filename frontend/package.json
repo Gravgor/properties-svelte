@@ -3,7 +3,7 @@
 	"version": "0.0.1",
 	"private": true,
 	"scripts": {
-		"start": "vite build && svelte-kit start",
+		"start": "vite build && vite preview",
 		"dev": "vite dev",
 		"build": "vite build",
 		"preview": "vite preview",
