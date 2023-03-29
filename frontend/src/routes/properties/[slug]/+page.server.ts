@@ -3,7 +3,7 @@ import { error } from "@sveltejs/kit";
 
 
 interface PropertiesLoad {
-    id: number;
+    slug: number;
 }
 
 async function getProperties(id: number) {
@@ -19,7 +19,6 @@ async function getProperties(id: number) {
 }
 
 export async function load({params}: {params: PropertiesLoad}) {
-    //@ts-ignore
     const properties = await getProperties(params.slug);
     if (properties) {
         return { properties };
