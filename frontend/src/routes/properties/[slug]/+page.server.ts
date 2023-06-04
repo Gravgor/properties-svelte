@@ -7,7 +7,7 @@ interface PropertiesLoad {
 }
 
 async function getProperties(id: number) {
-    const res = await fetch(`https://properties-svelte-production-657d.up.railway.app/api/v1/property/${id}`);
+    const res = await fetch(`http://localhost:5000/api/v1/property/${id}`);
     if (res.ok) {
         const properties = await res.json();
         return properties;
